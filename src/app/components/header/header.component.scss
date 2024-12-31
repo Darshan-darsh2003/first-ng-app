@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    padding-inline: 16px;
+    padding-block: 8px;
+    background-color: #333;
+    color:white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    li{
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+}
