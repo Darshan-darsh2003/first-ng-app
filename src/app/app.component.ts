@@ -15,7 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
   styles: [
     `
       main {
-        padding: 16px;
+        padding: 2rem;
       }
     `,
   ],

@@ -1,5 +1,23 @@
+<h3>Todos List</h3>
+
+<!-- Old way of using structural directive to simulate loading -->
+<!-- <p *ngIf="!todoItems().length">Loading...</p> -->
+
+@if(!todoItems().length){
+<p>Loading...</p>
+}
+
+<form>
+  <label>Filter Todos</label>
+  <input
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    placeholder="Search todos.."
+  />
+</form>
+
 <ul>
-  @for (todo of todoItems(); track todo.id) {
-  <li>{{ todo.title }}</li>
+  @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
+  <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
   }
 </ul>
